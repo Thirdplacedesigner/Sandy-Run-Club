@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -111,7 +110,6 @@
             text-align: center;
             padding: 0 20px;
             position: relative;
-            /* Premium image of a runner on the beach */
             background: linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.8)), 
                         url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             background-attachment: fixed;
@@ -119,53 +117,21 @@
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin-top: 50px;
             animation: fadeUp 1s ease-out forwards;
         }
 
         #hero h1 {
-            font-size: 5.5rem;
+            font-size: 6.5rem;
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            line-height: 1.05;
+            letter-spacing: 2px;
+            text-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
 
         #hero h1 span {
             color: var(--sunrise-orange);
-        }
-
-        #hero p {
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #cbd5e1;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: var(--sunrise-orange);
-            color: var(--pure-white);
-            padding: 18px 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            background: #ea580c;
-            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.5);
         }
 
         /* Story Section (The "Why") */
@@ -262,11 +228,8 @@
             background-position: center;
         }
 
-        /* Running to the beach */
         .card-img-1 { background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80'); }
-        /* Beach rest / Ocean dip */
         .card-img-2 { background-image: url('https://images.unsplash.com/photo-1538099130811-745e64318258?auto=format&fit=crop&w=800&q=80'); }
-        /* Coffee / Gathering back at school */
         .card-img-3 { background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80'); }
 
         .card-body {
@@ -339,6 +302,27 @@
             border-radius: 24px;
         }
 
+        .btn-primary {
+            display: inline-block;
+            background: var(--sunrise-orange);
+            color: var(--pure-white);
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #ea580c;
+            box-shadow: 0 15px 35px rgba(249, 115, 22, 0.5);
+        }
+
         /* Footer */
         footer {
             background-color: #020617;
@@ -389,8 +373,7 @@
         }
         
         @media (max-width: 480px) {
-            #hero h1 { font-size: 3rem; }
-            .btn-primary { padding: 15px 30px; font-size: 0.9rem; }
+            #hero h1 { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -409,8 +392,6 @@
     <header id="hero">
         <div class="hero-content">
             <h1>Leave the snooze behind.<br><span>Find your crew.</span></h1>
-            <p>Friday mornings hit different. Sand, surf, and good energy before the first bell even rings. Step out of your comfort zone and into the adventure.</p>
-            <a href="#about" class="btn-primary">Start The Journey</a>
         </div>
     </header>
 
