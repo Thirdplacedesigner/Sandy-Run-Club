@@ -4,207 +4,352 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandy Run Club | Join the Movement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Import an adventurous, modern font */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+        /* Base Styles */
+        :root {
+            --primary: #0077b6;
+            --secondary: #03045e;
+            --accent: #ff9f1c;
+            --text-dark: #2b2b2b;
+            --text-light: #ffffff;
+            --bg-light: #f9f9f9;
+        }
 
-        /* CSS Styles */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.7;
-            color: #1b263b;
-            background-color: #fdf8f5;
+        * {
             margin: 0;
             padding: 0;
-            background-image: radial-gradient(#e0e1dd 1px, transparent 1px);
-            background-size: 20px 20px;
+            box-sizing: border-box;
         }
 
-        header {
-            background: linear-gradient(135deg, #03045e 0%, #0077b6 50%, #00b4d8 100%);
-            color: #ffffff;
-            padding: 5rem 1rem;
-            text-align: center;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
+        html {
+            scroll-behavior: smooth;
         }
 
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: #ff9f1c;
-            border-radius: 50%;
-            opacity: 0.8;
-            box-shadow: 0 0 50px #ff9f1c;
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 3.5rem;
-            font-weight: 900;
-            letter-spacing: 2px;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background-color: rgba(3, 4, 94, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 50px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-light);
             text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            z-index: 1;
+            letter-spacing: 2px;
+            text-decoration: none;
         }
 
-        header p {
-            margin: 15px 0 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #caf0f8;
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
-            z-index: 1;
+            transition: color 0.3s;
         }
 
-        .container {
-            max-width: 900px;
-            margin: -3rem auto 4rem auto; 
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(3, 4, 94, 0.4), rgba(0, 119, 182, 0.4)), 
+                        url('https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
             padding: 0 20px;
-            position: relative;
-            z-index: 2;
+        }
+
+        #hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            background-color: var(--accent);
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e88d14;
+            transform: translateY(-3px);
+        }
+
+        /* Section Layouts */
+        section {
+            padding: 100px 10vw;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+            max-width: 700px;
+        }
+
+        /* Split Section (About) */
+        .split-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .split-text {
+            flex: 1;
+        }
+
+        .split-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1526503641372-9bd9079de659?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80') center/cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Grid Section (Routine) */
+        .grid-section {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 119, 182, 0.1);
-            margin-bottom: 2.5rem;
-            padding: 2.5rem;
-            border-left: 8px solid #ff9f1c;
-            transition: all 0.3s ease;
+            background: var(--bg-light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            text-align: left;
         }
 
         .card:hover {
-            transform: translateY(-5px) scale(1.01);
-            box-shadow: 0 15px 35px rgba(0, 119, 182, 0.15);
-            border-left: 8px solid #00b4d8; 
+            transform: translateY(-10px);
         }
 
-        .card h2 {
-            color: #03045e;
-            margin-top: 0;
-            font-size: 1.4rem;
-            font-weight: 700;
-            line-height: 1.4;
-            text-transform: uppercase;
-            border-bottom: 3px solid #caf0f8;
-            padding-bottom: 12px;
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-run { background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
+        .img-dip { background-image: url('https://images.unsplash.com/photo-1538099130811-745e64318258?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
+        .img-cafe { background-image: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'); }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Parallax Divider */
+        .parallax-banner {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .parallax-banner h2 {
+            font-size: 3rem;
             margin-bottom: 20px;
         }
 
-        .card p {
-            margin-bottom: 1rem;
-            text-align: justify;
-            font-size: 1.05rem;
-        }
-
-        .card p:last-child, .card ul:last-child {
-            margin-bottom: 0;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .card li {
-            margin-bottom: 8px;
-        }
-
-        .highlight {
-            color: #ff9f1c;
-            font-weight: 700;
-        }
-
+        /* Footer */
         footer {
+            background-color: var(--secondary);
+            color: #90e0ef;
             text-align: center;
-            padding: 3rem 0;
-            background-color: #1b263b;
-            color: #778da9;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 1px;
+            padding: 50px 20px;
         }
 
-        /* Mobile Responsiveness */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            .container {
-                margin-top: -1.5rem;
-            }
-            .card {
-                padding: 1.8rem;
-            }
-            .card h2 {
-                font-size: 1.2rem;
-            }
+            #hero h1 { font-size: 3rem; }
+            .nav-links { display: none; /* Hidden on mobile for simplicity in single file */ }
+            .split-section { flex-direction: column; }
+            .split-image { width: 100%; }
+            nav { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Sandy Run Club</h1>
-        <p>Wake Up. Run. Caffeinate.</p>
+    <nav id="navbar">
+        <a href="#hero" class="logo">Sandy Run Club</a>
+        <ul class="nav-links">
+            <li><a href="#about">The Challenge</a></li>
+            <li><a href="#routine">The Routine</a></li>
+            <li><a href="#rewards">Rewards</a></li>
+            <li><a href="#join">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <header id="hero">
+        <h1>Wake Up.<br>Run.<br>Caffeinate.</h1>
+        <p>Trade the snooze button for the sunrise. Your Friday adventure starts here.</p>
+        <a href="#join" class="btn">Start Your Journey</a>
     </header>
 
-    <div class="container">
-
-        <div class="card">
-            <h2>Not a Morning Person? We Get It.</h2>
-            <p>Between homework, social media, and just needing some sleep, waking up early to exercise sounds like the last thing you want to do. Low motivation is real, and the thought of working out before school can be intimidating.</p>
-            <p>But what if mornings didn't have to be a drag? We built Sandy Run Club to change the way you start your day. It’s less about "working out" and more about <span class="highlight">starting a Friday adventure</span> with your friends.</p>
+    <section id="about" class="split-section">
+        <div class="split-text">
+            <h2 class="section-title">Not a Morning Person? We Get It.</h2>
+            <p class="section-subtitle">Between homework, social media, and just needing some sleep, waking up early to exercise sounds intimidating.</p>
+            <p>But what if mornings didn't have to be a drag? We built Sandy Run Club to change the way you start your day. It’s less about "working out" and more about starting a Friday adventure with your friends.</p>
+            <p>You don't need to be a track star. If you've ever felt self-conscious about exercising, leave that at the door. Whether you are jogging at the front or walking at the back with a friend, you belong here.</p>
         </div>
+        <div class="split-image"></div>
+    </section>
 
-        <div class="card">
-            <h2>The Friday Routine</h2>
-            <p>Every Friday from **7:30 AM to 8:40 AM**, we trade the snooze button for the sunrise. Here is the game plan:</p>
-            <ul>
-                <li><strong>The Run:</strong> A casual, 30-minute jog from the school straight down to Sandringham beach. </li>
-                <li><strong>The Dip:</strong> Cool off and wake up with a quick splash in the water.</li>
-                <li><strong>The Reward:</strong> Hit up the local café to grab a latte, socialize, and get energized before the first bell even rings.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h2>For Everyone. Seriously.</h2>
-            <p>You don't need to be a track star or a hardcore athlete to join us. If you've ever felt self-conscious about exercising or worried about keeping up, leave that at the door. </p>
-            <p>Sandy Run Club is about the <span class="highlight">community vibe</span>. Whether you are jogging at the front or taking it easy at the back with a friend, you are part of the crew. We are here to build a positive, energetic environment where everyone belongs.</p>
-        </div>
-
-        <div class="card">
-            <h2>Run Now, Eat Free Later</h2>
-            <p>Still need a little push to get out of bed? We've got you covered.</p>
-            <p>Every time you show up for a morning run, you earn **exclusive canteen tickets**. Present them during recess or lunchtime and treat yourself to <span class="highlight">free snacks and food</span>. Build a healthy habit in the morning, get rewarded in the afternoon!</p>
-        </div>
-
-        <div class="card">
-            <h2>Check the Vibe</h2>
-            <p>Don't just take our word for it—see it for yourself. Follow the Sandy Run Club Instagram account to catch the sunrise pics, beach dips, and cafe hangouts.</p>
-            <p>We are building a culture that goes beyond just Sandringham College. Join the movement, tag your friends, and let’s make Friday mornings legendary.</p>
-        </div>
-
-        <div class="card">
-            <h2>Your Journey Starts This Friday</h2>
-            <p>Why wait? You are already knocking out half your recommended daily activity before school even starts, leaving your weekend completely free.</p>
-            <p>Grab your running shoes, bring a mate, and meet us this Friday. Let’s hit the beach and start the day right!</p>
-        </div>
-
+    <div class="parallax-banner">
+        <h2>"The hardest part is tying your shoes."</h2>
+        <p style="font-size: 1.2rem; max-width: 600px;">We are building a culture that goes beyond Sandringham College. Check our Instagram, catch the sunrise pics, and see the vibe for yourself.</p>
     </div>
 
+    <section id="routine" class="grid-section">
+        <h2 class="section-title">The Friday Routine</h2>
+        <p class="section-subtitle">Every Friday from 7:30 AM to 8:40 AM. Here is the game plan.</p>
+        
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-img img-run"></div>
+                <div class="card-content">
+                    <h3>1. The Run</h3>
+                    <p>A casual, 30-minute jog from the school straight down the pavement to the beautiful Sandringham beach.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img img-dip"></div>
+                <div class="card-content">
+                    <h3>2. The Dip</h3>
+                    <p>Cool off, wash away the sleep, and completely wake up your body with a quick splash in the ocean water.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img img-cafe"></div>
+                <div class="card-content">
+                    <h3>3. The Reward</h3>
+                    <p>Hit up the local café to grab a latte, socialize, and get energized before the first bell even rings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rewards" class="split-section" style="background-color: var(--bg-light); flex-direction: row-reverse;">
+        <div class="split-text">
+            <h2 class="section-title">Run Now, Eat Free Later.</h2>
+            <p class="section-subtitle">Still need a little push to get out of bed?</p>
+            <p>Every time you show up for a morning run, you earn exclusive canteen tickets. Present them during recess or lunchtime and treat yourself to free snacks and food.</p>
+            <p>Build a healthy habit in the morning, get rewarded in the afternoon. It's a win-win.</p>
+        </div>
+        <div class="split-image" style="background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+    </section>
+
+    <section id="join" style="text-align: center; padding: 120px 20px;">
+        <h2 class="section-title">Your Journey Starts This Friday</h2>
+        <p class="section-subtitle" style="margin: 0 auto 40px auto;">You are already knocking out half your recommended daily activity before school even starts, leaving your weekend completely free.</p>
+        <a href="#" class="btn">Follow Us on Instagram</a>
+    </section>
+
     <footer>
-        <p>&copy; 2026 SANDY RUN CLUB. EMBRACE THE MORNING.</p>
+        <h2>SANDY RUN CLUB</h2>
+        <p>&copy; 2026 Sandringham College Initiative. Embrace the morning.</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 
 </body>
 </html>
