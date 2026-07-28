@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,9 +111,9 @@
             text-align: center;
             padding: 0 20px;
             position: relative;
-            /* Premium Unsplash image of a group running on a beach/trail at sunrise */
-            background: linear-gradient(to bottom, rgba(15,23,42,0.4), rgba(15,23,42,0.7)), 
-                        url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            /* Premium image of a runner on the beach */
+            background: linear-gradient(to bottom, rgba(15,23,42,0.3), rgba(15,23,42,0.8)), 
+                        url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             background-attachment: fixed;
             color: var(--pure-white);
         }
@@ -261,9 +262,12 @@
             background-position: center;
         }
 
+        /* Running to the beach */
         .card-img-1 { background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80'); }
+        /* Beach rest / Ocean dip */
         .card-img-2 { background-image: url('https://images.unsplash.com/photo-1538099130811-745e64318258?auto=format&fit=crop&w=800&q=80'); }
-        .card-img-3 { background-image: url('https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?auto=format&fit=crop&w=800&q=80'); }
+        /* Coffee / Gathering back at school */
+        .card-img-3 { background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=800&q=80'); }
 
         .card-body {
             padding: 40px 30px;
@@ -380,7 +384,7 @@
             .story-image, .perks-image { width: 100%; height: 400px; }
             .story-image::after, .perks-image::after { display: none; }
             .grid-3 { grid-template-columns: 1fr; }
-            .nav-links { display: none; /* Mobile menu requires JS toggle, hidden for single file simplicity */ }
+            .nav-links { display: none; }
             nav { padding: 20px 5%; }
         }
         
@@ -423,31 +427,31 @@
     <section id="ritual" class="ritual-section">
         <div class="ritual-header reveal">
             <h2>The Friday Ritual</h2>
-            <p>Every Friday from 7:30 AM to 8:40 AM. No stress, no finish lines. Just a morning dedicated to good health, great vibes, and ticking off your physical activity goals without even thinking about it.</p>
+            <p>Every Friday from 7:30 AM to 8:40 AM. A perfectly balanced morning of movement, relaxation, and connection to kick off your weekend right.</p>
         </div>
 
         <div class="grid-3 reveal">
             <div class="card">
                 <div class="card-img card-img-1"></div>
                 <div class="card-body">
-                    <h3>01. The Stride</h3>
-                    <p>We meet up and head out. A casual, 30-minute collective run from the campus straight down to the coastline as the sun comes up.</p>
+                    <h3>01. The Journey Out</h3>
+                    <p>We meet up at school and head out together. A casual, 15-minute collective run from the campus straight down to Sandringham Beach as the sun comes up.</p>
                 </div>
             </div>
             
             <div class="card">
                 <div class="card-img card-img-2"></div>
                 <div class="card-body">
-                    <h3>02. The Splash</h3>
-                    <p>Drop the shoes. We hit the beach for a quick, optional ocean dip to shock the system, wash away the sleep, and totally reset.</p>
+                    <h3>02. The Beach Break</h3>
+                    <p>A 10-minute pause on the sand. Catch your breath, hang out, and if you are feeling adventurous, take an optional ocean dip to completely reset your system.</p>
                 </div>
             </div>
 
             <div class="card">
                 <div class="card-img card-img-3"></div>
                 <div class="card-body">
-                    <h3>03. The Recharge</h3>
-                    <p>We roll into the local café. Grab a warm latte or a smoothie, hang out, and walk into your first class feeling completely unstoppable.</p>
+                    <h3>03. The Return & Recharge</h3>
+                    <p>A 15-minute run back to school. We gather up to share snacks, grab a coffee or drink, and walk into our first class feeling completely unstoppable.</p>
                 </div>
             </div>
         </div>
