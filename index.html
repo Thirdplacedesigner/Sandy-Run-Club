@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandy Run Club | Find Your Crew</title>
+    <title>Sandy Run Club | The Phenomenal Journey</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Modern Dark/Sporty Theme Variables */
+        /* Color Palette: Deep Blues, Passion Red, Pure White */
         :root {
-            --bg-deep: #09090b; /* Pitch black/zinc */
-            --bg-card: #18181b; /* Slightly lighter for cards */
-            --neon-orange: #ff4d00; /* Energetic accent */
-            --neon-cyan: #00f0ff; /* Secondary tech accent */
-            --text-main: #f8fafc;
-            --text-muted: #a1a1aa;
+            --deep-space-blue: #020617; /* Near black blue */
+            --ocean-abyss: #0f172a; /* Dark slate blue */
+            --electric-blue: #2563eb; /* Vibrant accent blue */
+            --passion-red: #dc2626; /* Intense red */
+            --blood-orange: #ef4444; /* Lighter red for hover */
+            --pure-white: #ffffff;
+            --off-white: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * {
@@ -28,8 +30,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-deep);
+            color: var(--pure-white);
+            background-color: var(--deep-space-blue);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -38,7 +40,7 @@
         h1, h2, h3, h4, .brand-logo {
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
         }
 
         /* Frosted Glass Navigation */
@@ -46,235 +48,376 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 25px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(9, 9, 11, 0.7);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(2, 6, 23, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
         }
 
         .brand-logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--text-main);
+            color: var(--pure-white);
             text-decoration: none;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
         }
 
         .brand-logo span {
-            color: var(--neon-orange);
+            color: var(--passion-red);
+        }
+
+        /* Shared Section Styles for "Game Changer" Length */
+        .fullscreen-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 5%;
+            position: relative;
         }
 
         /* Hero Section */
         #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            /* Fallback color if image fails */
-            background-color: #111; 
-            background: linear-gradient(to bottom, rgba(9, 9, 11, 0.4), rgba(9, 9, 11, 1)), 
-                        url('https://images.unsplash.com/photo-1528629297340-d1d466945dc5?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(2, 6, 23, 0.3), var(--deep-space-blue)), 
+                        url('https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
             background-attachment: fixed;
+            text-align: center;
         }
 
         .hero-content {
-            max-width: 1000px;
+            max-width: 1200px;
             z-index: 2;
-            animation: fadeUp 1.2s ease-out forwards;
+            animation: fadeUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
         #hero h1 {
-            font-size: 7vw;
+            font-size: 8vw;
             font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            line-height: 1.05;
+            margin-bottom: 30px;
+            text-shadow: 0 15px 40px rgba(0,0,0,0.9);
         }
 
-        #hero h1 span {
-            background: linear-gradient(45deg, var(--neon-orange), #ff8c00);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        #hero h1 span.blue {
+            color: var(--electric-blue);
+        }
+        
+        #hero h1 span.red {
+            color: var(--passion-red);
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            color: var(--off-white);
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            font-weight: 300;
         }
 
         .btn-primary {
             display: inline-block;
-            background: var(--neon-orange);
-            color: #fff;
-            padding: 16px 40px;
-            font-size: 1.1rem;
+            background: var(--passion-red);
+            color: var(--pure-white);
+            padding: 20px 50px;
+            font-size: 1.2rem;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             text-decoration: none;
-            border-radius: 4px; /* Squarer buttons look sportier */
-            transition: all 0.3s ease;
+            border-radius: 0px; /* Sharp edges for intensity */
+            transition: all 0.4s ease;
             position: relative;
-            overflow: hidden;
-            border: 1px solid var(--neon-orange);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--neon-orange);
-            box-shadow: 0 0 20px rgba(255, 77, 0, 0.4);
-            transform: translateY(-2px);
+            background: var(--blood-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.6);
         }
 
-        /* The Ritual Section */
-        .section-container {
-            padding: 120px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+        /* The Manifesto / Vision */
+        #manifesto {
+            background: var(--deep-space-blue);
+            text-align: center;
+        }
+
+        .manifesto-text {
+            max-width: 900px;
+        }
+
+        .manifesto-text h2 {
+            font-size: 4rem;
+            margin-bottom: 40px;
+            color: var(--pure-white);
+        }
+
+        .manifesto-text h2 span {
+            color: var(--electric-blue);
+        }
+
+        .manifesto-text p {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        /* Epic Parallax Divider */
+        .parallax-divider {
+            height: 70vh;
+            background: linear-gradient(rgba(37, 99, 235, 0.2), rgba(2, 6, 23, 1)),
+                        url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2000&q=80') center/cover;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .parallax-divider h2 {
+            font-size: 5rem;
+            color: var(--pure-white);
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        .parallax-divider span {
+            color: var(--passion-red);
+        }
+
+        /* The Journey Timeline (Vertical Scrolling Feature) */
+        #journey {
+            background: var(--ocean-abyss);
+            padding: 150px 5%;
+            position: relative;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
         }
 
         .section-header h2 {
-            font-size: 3.5rem;
-            margin-bottom: 15px;
+            font-size: 4rem;
+            color: var(--pure-white);
         }
 
         .section-header p {
-            color: var(--text-muted);
+            color: var(--electric-blue);
             font-size: 1.2rem;
-            max-width: 600px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .timeline {
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        /* Cool Cards */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s ease;
             position: relative;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--neon-orange);
-            box-shadow: 0 15px 30px rgba(255, 77, 0, 0.15);
-        }
-
-        .card-img {
-            height: 250px;
-            background-color: #222; /* Fallback */
-            background-size: cover;
-            background-position: center;
-            border-bottom: 3px solid var(--neon-orange);
-        }
-
-        /* Fresh working image links */
-        .img-run { background-image: url('https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?auto=format&fit=crop&w=800&q=80'); }
-        .img-beach { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'); }
-        .img-social { background-image: url('https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80'); }
-
-        .card-body {
-            padding: 30px;
-        }
-
-        .step-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            color: rgba(255, 255, 255, 0.1);
+        /* The central red line */
+        .timeline::before {
+            content: '';
             position: absolute;
-            top: 200px;
-            right: 20px;
-            line-height: 1;
-            font-weight: 700;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--passion-red);
+            transform: translateX(-50%);
+            box-shadow: 0 0 15px var(--passion-red);
         }
 
-        .card-body h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--text-main);
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 120px;
         }
 
-        .card-body p {
-            color: var(--text-muted);
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: 50%;
         }
 
-        /* Data Insights Section */
-        .data-section {
-            background-color: var(--bg-card);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .insight-box {
-            background: var(--bg-deep);
+        .timeline-content {
+            width: 80%;
+            background: rgba(255,255,255,0.03);
             padding: 40px;
-            border-radius: 12px;
-            border-left: 4px solid var(--neon-cyan);
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-left: 4px solid var(--electric-blue);
+            position: relative;
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s ease;
         }
 
-        .insight-box:hover {
-            background: rgba(0, 240, 255, 0.05);
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left: none;
+            border-right: 4px solid var(--electric-blue);
+            margin-left: auto;
         }
 
-        .insight-box h4 {
-            font-size: 1.5rem;
-            color: var(--neon-cyan);
-            margin-bottom: 10px;
+        .timeline-content:hover {
+            transform: scale(1.05);
+            background: rgba(37, 99, 235, 0.1);
+            border-color: var(--electric-blue);
         }
 
-        .insight-box p {
-            color: var(--text-main);
+        /* The timeline dots */
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -13%;
+            width: 20px;
+            height: 20px;
+            background: var(--pure-white);
+            border: 4px solid var(--passion-red);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 0 20px var(--passion-red);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: auto;
+            left: -13%;
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: var(--passion-red);
+            color: var(--pure-white);
+            padding: 5px 15px;
+            font-weight: 800;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--pure-white);
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
             font-size: 1.1rem;
         }
 
-        .insight-box span {
-            display: block;
-            margin-top: 10px;
+        /* Data Section */
+        #data {
+            background: var(--deep-space-blue);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 150px 5%;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .insight-card {
+            background: linear-gradient(145deg, #0a1128, #020617);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            padding: 50px 40px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .insight-card:hover {
+            border-color: var(--passion-red);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.15);
+        }
+
+        .insight-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
+            color: rgba(255, 255, 255, 0.05);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            line-height: 1;
+        }
+
+        .insight-card h4 {
+            font-size: 1.8rem;
+            color: var(--pure-white);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--electric-blue);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .insight-card p {
+            color: var(--off-white);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .survey-quote {
             color: var(--text-muted);
-            font-size: 0.9rem;
             font-style: italic;
+            border-left: 3px solid var(--passion-red);
+            padding-left: 15px;
+            font-size: 0.95rem;
         }
 
         /* Footer */
         footer {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 100px 5%;
-            background-color: var(--bg-deep);
+            background: linear-gradient(to top, #000000, var(--deep-space-blue));
+            padding: 0 5%;
         }
 
         footer h2 {
-            font-size: 3rem;
+            font-size: 6vw;
+            color: var(--pure-white);
             margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+        }
+
+        footer p {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            max-width: 600px;
         }
 
         /* Animations */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(40px); }
+            from { opacity: 0; transform: translateY(60px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transform: translateY(80px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
         .reveal.active {
@@ -284,8 +427,13 @@
 
         /* Mobile Adjustments */
         @media (max-width: 900px) {
+            #hero h1 { font-size: 4rem; }
             .grid-3 { grid-template-columns: 1fr; }
-            #hero h1 { font-size: 3.5rem; }
+            .timeline::before { left: 30px; }
+            .timeline-item, .timeline-item:nth-child(even) { justify-content: flex-end; padding-left: 80px; padding-right: 0; }
+            .timeline-content, .timeline-item:nth-child(even) .timeline-content { width: 100%; margin: 0; border-left: 4px solid var(--electric-blue); border-right: none; }
+            .timeline-content::before, .timeline-item:nth-child(even) .timeline-content::before { left: -60px; right: auto; }
+            .parallax-divider h2 { font-size: 3rem; }
         }
     </style>
 </head>
@@ -295,82 +443,104 @@
         <a href="#hero" class="brand-logo">SANDY<span>RUN</span>CLUB</a>
     </nav>
 
-    <header id="hero">
+    <header id="hero" class="fullscreen-section">
         <div class="hero-content">
-            <h1>UNWIND & CONNECT.<br><span>AFTER CLASS.</span></h1>
-            <a href="#ritual" class="btn-primary">Explore The Routine</a>
+            <h1>A <span class="blue">PHENOMENAL</span><br>JOURNEY <span class="red">AWAITS</span></h1>
+            <p>Leave the pressure behind. Discover the ultimate Friday afternoon reset. Pure passion, deep connection, and the open coast.</p>
+            <a href="#manifesto" class="btn-primary">Step Into The Blue</a>
         </div>
     </header>
 
-    <section id="ritual" class="section-container reveal">
-        <div class="section-header">
-            <h2>The Friday Flow</h2>
-            <p>Every Friday at 15:15. A seamless transition from the school week into the weekend. No pressure, just vibes.</p>
+    <section id="manifesto" class="fullscreen-section">
+        <div class="manifesto-text reveal">
+            <h2>Rewrite Your <span>Friday</span></h2>
+            <p>After a full week of academic pressure, sitting in classrooms, and staring at screens, your mind doesn't need another competition. It needs a release.</p>
+            <p>We built this club with one core philosophy: <strong>Movement fueled by passion, not obligation.</strong> We skip the brutal morning alarms and the fear of judgment. Instead, we embrace the deep blue of Sandringham Beach at 15:15 PM.</p>
+            <p style="color: var(--pure-white); font-weight: 600; font-size: 1.6rem; margin-top: 40px;">This is your time to disconnect to reconnect.</p>
+        </div>
+    </section>
+
+    <div class="parallax-divider">
+        <h2 class="reveal">FIND YOUR <span>FIRE</span><br>BY THE WATER.</h2>
+    </div>
+
+    <section id="journey">
+        <div class="section-header reveal">
+            <p>The Friday Blueprint</p>
+            <h2>YOUR AFTERNOON ESCAPE</h2>
         </div>
 
-        <div class="grid-3">
-            <div class="card">
-                <div class="card-img img-run"></div>
-                <div class="step-number">01</div>
-                <div class="card-body">
-                    <h3>The Journey Out</h3>
-                    <p>We head out right after classes. A comfortable, 15-minute collective run from school straight down to Sandringham Beach to clear your mind.</p>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <span class="time-badge">15:15 PM</span>
+                    <h3>The Departure</h3>
+                    <p>The final bell rings. We meet up on campus, leaving the stress in the lockers. We head out for a collective 15-minute run down to the coast. No stopwatches, just the sound of footsteps and conversation.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <span class="time-badge">15:30 PM</span>
+                    <h3>The Coastal Reset</h3>
+                    <p>We hit the sand for a 10-minute pause. Catch your breath, look out at the ocean, and let the week wash away. Feeling bold? Dive in for an optional ocean dip to shock the system and awaken the senses.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <span class="time-badge">15:40 PM</span>
+                    <h3>The Return</h3>
+                    <p>Energized and clear-headed, we take the 15-minute journey back to school. We arrive not as exhausted students, but as a unified crew ready to dominate the weekend.</p>
                 </div>
             </div>
             
-            <div class="card">
-                <div class="card-img img-beach"></div>
-                <div class="step-number">02</div>
-                <div class="card-body">
-                    <h3>The Beach Break</h3>
-                    <p>A 10-minute pause on the sand. Catch your breath, enjoy the coastal view, and if you want, take an optional ocean dip to refresh.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img img-social"></div>
-                <div class="step-number">03</div>
-                <div class="card-body">
-                    <h3>Return & Connect</h3>
-                    <p>A 15-minute run back to school. We gather together to share laughs, grab drinks, and celebrate finishing the week strong.</p>
+            <div class="timeline-item reveal">
+                <div class="timeline-content">
+                    <span class="time-badge">15:55 PM</span>
+                    <h3>The Connection</h3>
+                    <p>We gather up back at basecamp. We share laughs, grab drinks, and celebrate the shared joy of moving our bodies. This is where friendships are forged.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="data-section section-container reveal">
-        <div class="section-header">
-            <h2>Built By The Crew</h2>
-            <p>We built this club based on real feedback from you. Here is why our setup works.</p>
+    <section id="data">
+        <div class="section-header reveal">
+            <p>By The Crew, For The Crew</p>
+            <h2>WHY THIS WORKS</h2>
         </div>
 
         <div class="grid-3">
-            <div class="insight-box">
-                <h4>Goodbye Morning Alarms</h4>
-                <p>By meeting on Friday afternoons, we completely skip the brutal 6:00 AM wake-ups and cold mornings that stop people from moving.</p>
-                <span>Based on survey feedback: "I want to stay in bed" & "cold weather"</span>
+            <div class="insight-card reveal" style="transition-delay: 0.1s;">
+                <div class="insight-number">01</div>
+                <h4>Zero Resistance</h4>
+                <p>We moved the clock to Friday afternoon to completely eliminate the pain of 6:00 AM alarms and freezing morning weather.</p>
+                <div class="survey-quote">Survey Insight: "I want to stay in bed" is no longer an excuse.</div>
             </div>
 
-            <div class="insight-box">
-                <h4>Zero Intimidation</h4>
-                <p>No stopwatches. No pressure. Whether you sprint or walk and talk, the focus is purely on shaking off the school week together.</p>
-                <span>Based on survey feedback: Worries about "how I will be looked at"</span>
+            <div class="insight-card reveal" style="transition-delay: 0.3s;">
+                <div class="insight-number">02</div>
+                <h4>Pure Acceptance</h4>
+                <p>Anxiety about pace or appearance? Gone. The focus is entirely on the shared experience and positive vibes, welcoming all levels.</p>
+                <div class="survey-quote">Survey Insight: Solves the fear of "how I will be looked at."</div>
             </div>
 
-            <div class="insight-box">
-                <h4>Real Mental Health</h4>
-                <p>We run for clarity, not for medals. Combining coastal fresh air with a solid group of friends is the ultimate reset button.</p>
-                <span>Based on survey feedback: Wanting "improved health, strong mental state"</span>
+            <div class="insight-card reveal" style="transition-delay: 0.5s;">
+                <div class="insight-number">03</div>
+                <h4>Mental Elevation</h4>
+                <p>We designed this to trigger a genuine internal change—improving your physical health while building unbreakable mental clarity.</p>
+                <div class="survey-quote">Survey Insight: Meets the demand for "improved health & strong mental state."</div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="reveal">
-            <h2>READY TO MOVE?</h2>
-            <p style="margin-bottom: 30px; color: var(--text-muted);">Trade your Friday afternoon slump for an adventure.</p>
-            <a href="#" class="btn-primary">Follow @SandyRunClub</a>
-            <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">&copy; 2026 Sandy Run Club. All rights reserved.</p>
+            <h2>START THE JOURNEY</h2>
+            <p>The weekend starts here. Trade your Friday afternoon slump for an unforgettable experience with the crew.</p>
+            <a href="#" class="btn-primary" style="padding: 25px 60px; font-size: 1.5rem;">Join The Movement</a>
+            <p style="margin-top: 80px; font-size: 0.9rem; letter-spacing: 2px;">&copy; 2026 SANDY RUN CLUB. VICTORIA, AUSTRALIA.</p>
         </div>
     </footer>
 
@@ -380,7 +550,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
+                var elementVisible = 150; // Triggers later for a more dramatic entrance
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
