@@ -200,3 +200,195 @@
             position: absolute;
             top: 200px;
             right: 20px;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .card-body h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+        }
+
+        /* Data Insights Section */
+        .data-section {
+            background-color: var(--bg-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .insight-box {
+            background: var(--bg-deep);
+            padding: 40px;
+            border-radius: 12px;
+            border-left: 4px solid var(--neon-cyan);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .insight-box:hover {
+            background: rgba(0, 240, 255, 0.05);
+        }
+
+        .insight-box h4 {
+            font-size: 1.5rem;
+            color: var(--neon-cyan);
+            margin-bottom: 10px;
+        }
+
+        .insight-box p {
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        .insight-box span {
+            display: block;
+            margin-top: 10px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 100px 5%;
+            background-color: var(--bg-deep);
+        }
+
+        footer h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .grid-3 { grid-template-columns: 1fr; }
+            #hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#hero" class="brand-logo">SANDY<span>RUN</span>CLUB</a>
+    </nav>
+
+    <header id="hero">
+        <div class="hero-content">
+            <h1>UNWIND & CONNECT.<br><span>AFTER CLASS.</span></h1>
+            <a href="#ritual" class="btn-primary">Explore The Routine</a>
+        </div>
+    </header>
+
+    <section id="ritual" class="section-container reveal">
+        <div class="section-header">
+            <h2>The Friday Flow</h2>
+            <p>Every Friday at 15:15. A seamless transition from the school week into the weekend. No pressure, just vibes.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-img img-run"></div>
+                <div class="step-number">01</div>
+                <div class="card-body">
+                    <h3>The Journey Out</h3>
+                    <p>We head out right after classes. A comfortable, 15-minute collective run from school straight down to Sandringham Beach to clear your mind.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img img-beach"></div>
+                <div class="step-number">02</div>
+                <div class="card-body">
+                    <h3>The Beach Break</h3>
+                    <p>A 10-minute pause on the sand. Catch your breath, enjoy the coastal view, and if you want, take an optional ocean dip to refresh.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img img-social"></div>
+                <div class="step-number">03</div>
+                <div class="card-body">
+                    <h3>Return & Connect</h3>
+                    <p>A 15-minute run back to school. We gather together to share laughs, grab drinks, and celebrate finishing the week strong.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="data-section section-container reveal">
+        <div class="section-header">
+            <h2>Built By The Crew</h2>
+            <p>We built this club based on real feedback from you. Here is why our setup works.</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="insight-box">
+                <h4>Goodbye Morning Alarms</h4>
+                <p>By meeting on Friday afternoons, we completely skip the brutal 6:00 AM wake-ups and cold mornings that stop people from moving.</p>
+                <span>Based on survey feedback: "I want to stay in bed" & "cold weather"</span>
+            </div>
+
+            <div class="insight-box">
+                <h4>Zero Intimidation</h4>
+                <p>No stopwatches. No pressure. Whether you sprint or walk and talk, the focus is purely on shaking off the school week together.</p>
+                <span>Based on survey feedback: Worries about "how I will be looked at"</span>
+            </div>
+
+            <div class="insight-box">
+                <h4>Real Mental Health</h4>
+                <p>We run for clarity, not for medals. Combining coastal fresh air with a solid group of friends is the ultimate reset button.</p>
+                <span>Based on survey feedback: Wanting "improved health, strong mental state"</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="reveal">
+            <h2>READY TO MOVE?</h2>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">Trade your Friday afternoon slump for an adventure.</p>
+            <a href="#" class="btn-primary">Follow @SandyRunClub</a>
+            <p style="margin-top: 50px; font-size: 0.8rem; color: #555;">&copy; 2026 Sandy Run Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger on load
+    </script>
+
+</body>
+</html>
